@@ -110,7 +110,7 @@ class TopicModelDataPreparation:
                 text_for_contextual, sbert_model_to_load=self.contextualized_model, max_seq_length=self.max_seq_length)
         else:
             train_contextualized_embeddings = custom_embeddings
-        self.vocab = self.vectorizer.get_feature_names()
+        self.vocab = self.vectorizer.get_feature_names_out()
         self.id2token = {k: v for k, v in zip(range(0, len(self.vocab)), self.vocab)}
 
         if labels:
